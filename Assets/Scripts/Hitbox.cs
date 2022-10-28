@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hitbox : MonoBehaviour {
+    //Consider changing from create/delete to Object Pooling
 
     public float lifespan = 0.5f;
     public int damage = 1;
     //private Vector2 knockback = Vector2.one;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private new string tag = "Player";
+    [SerializeField] private string hitTag = "";
 
     private void Update() {
         lifespan -= Time.deltaTime;
@@ -19,14 +20,15 @@ public class Hitbox : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (layerMask == (layerMask |(1 << other.transform.gameObject.layer))) {
             Hurtbox hurtbox = other.GetComponent<Hurtbox>();
-            if (hurtbox != null && other.CompareTag(tag)) {
-                OnHit(hurtbox);
-                
+            if (hurtbox != null) {
+                if (hitTag == "Player" || hitTag == "Ally") {
+                    if (hurtbox.hurtTag != "Player" && hurtbox.hurtTag != "Ally" && hurtbox.isInvincible == false) {
+                        hurtbox.onHit(damage);
+                    }
+                } else if (hurtbox.hurtTag != hitTag && hurtbox.isInvincible == false) {
+                    hurtbox.onHit(damage);
+                }
             }
         }
-    }
-    protected void OnHit(Hurtbox hurtbox) {
-        Debug.Log("I've been hit! " + damage.ToString());
-        Destroy(this.gameObject); //remove later and add invincibility frames to hurtbox
     }
 }

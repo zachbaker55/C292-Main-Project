@@ -355,6 +355,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: crystal
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe618ba97615ad41ac15f686e9ce5ec
+      internalID: 86253360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -367,6 +388,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       left_wall: 292321351
+      crystal_ground: 1189217937
       wall_0: 1489936161
       front_wall: -1858231481
       bottom_wall: 1298369933
@@ -378,6 +400,7 @@ TextureImporter:
       enemy_0: 1514893664
       hitbox_16x16: 607723218
       ground_0: 149776287
+      crystal: 86253360
       right_wall: 721090175
   spritePackingTag: 
   pSDRemoveMatte: 0

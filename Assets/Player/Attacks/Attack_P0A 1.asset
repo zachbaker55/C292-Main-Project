@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e72208ee3b209498f65fbae08d5120, type: 3}
+  m_Name: Attack_P0A 1
+  m_EditorClassIdentifier: 
+  name: Iyde's Attack
+  cooldownTime: 0.3
+  activeTime: 0.03
+  hitbox: {fileID: 3534186597614149490, guid: a7a917d3dba90004b9e7741e8606ec9b, type: 3}
