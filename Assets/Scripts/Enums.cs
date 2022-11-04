@@ -6,8 +6,8 @@ public class Enums : MonoBehaviour {
     public enum Directions {
         up,
         right,
-        left,
         down,
+        left,
         directionless
     }
 }

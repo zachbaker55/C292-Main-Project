@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e72208ee3b209498f65fbae08d5120, type: 3}
-  m_Name: Attack_P0A 1
+  m_Script: {fileID: 11500000, guid: 7ee7c3248e95d024b92cbb520a3d1c47, type: 3}
+  m_Name: New Attack_E0A
   m_EditorClassIdentifier: 
-  animation:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  name: Iyde's Attack
-  cooldownTime: 0.3
-  activeTime: 0.03
+  animationUp: {fileID: 0}
+  animationRight: {fileID: 0}
+  animationDown: {fileID: 0}
+  animationLeft: {fileID: 0}
+  name: Enemy Attack 1
+  cooldownTime: 0.5
+  activeTime: 0.2

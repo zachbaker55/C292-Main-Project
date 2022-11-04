@@ -2,37 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))] //Continuous, 0 gravity, interpolate, freeze rotation Z
-public class PlayerController : Entity {
+public class PlayerController : Ally {
 //animate with https://www.youtube.com/watch?v=whzomFgjT50
+    protected override string entityType {get {return "Player";}}
 
     //Components
     [SerializeField] private Rigidbody2D playerRB;
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private StatDisplay statDisplay;
+
     //Player
-    [SerializeField] private float walkSpeed = 6f;
-    public static List<PlayerController> playerList = new List<PlayerController>();
-    public static List<PlayerController> GetPlayerList() {
-        return playerList;
-    }
 
     float inputX;
     float inputY;
-    //Direction of player: Down:(0,-1,0), Right(1,0,0), Left(-1,0,0), Up(0,1,0) 
 
-    public override string entityType {get {return "Player";}}
-
-    private void Awake() {
-        playerList.Add(this);
+    protected override void Awake() {
+        base.Awake();
+        healthBar.setMaxHealth(maxHealth);
+        healthBar.setHealth(currentHealth);
+        statDisplay.setDamage(damage);
     }
 
-    private void Update() {
+    protected override void Update() {
+        base.Update();
         //Get movements
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
     }
 
     //Physics go in FixedUpdate()
-    private void FixedUpdate() {
+    protected override void FixedUpdate() {
+        base.FixedUpdate();
         if (canMove) {
             //Movement
             if (inputX != 0 || inputY != 0) { 
@@ -55,8 +55,16 @@ public class PlayerController : Entity {
         }
     }
 
-    private void OnDestroy() {
-        playerList.Remove(this);
+    public override void levelUp() {
+        base.levelUp();
+        healthBar.setMaxHealth(maxHealth);
+        healthBar.setHealth(currentHealth);
+        statDisplay.setDamage(damage);
+    }
+
+    public override void onHit(int damage) {
+        base.onHit(damage);
+        healthBar.setHealth(currentHealth);
     }
 
     

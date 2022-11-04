@@ -170,8 +170,8 @@ TextureImporter:
       name: ground_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 240
+        x: 80
+        y: 224
         width: 16
         height: 16
       alignment: 9
@@ -275,8 +275,8 @@ TextureImporter:
       name: right_wall
       rect:
         serializedVersion: 2
-        x: 48
-        y: 240
+        x: 96
+        y: 224
         width: 16
         height: 16
       alignment: 9
@@ -296,7 +296,7 @@ TextureImporter:
       name: left_wall
       rect:
         serializedVersion: 2
-        x: 16
+        x: 64
         y: 224
         width: 16
         height: 16
@@ -317,8 +317,8 @@ TextureImporter:
       name: bottom_wall
       rect:
         serializedVersion: 2
-        x: 48
-        y: 224
+        x: 80
+        y: 208
         width: 16
         height: 16
       alignment: 9
@@ -376,6 +376,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bottom_left_wall
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f040ba713fb79af44addcc02ae4fd754
+      internalID: -1481486418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottom_right_wall
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcf02348de60874db6c9db0b2f46642
+      internalID: -63261747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_right_edge_top
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4325fd1c19ac2a546b6d0fa8fbff93e8
+      internalID: 979020516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_right_edge
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085490fc07efccb4caefe28b5a753556
+      internalID: -638633143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_right_edge_base
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 208
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bec097f992ebb745a6a3a0762ff6329
+      internalID: -573323606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_left_edge_base
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ed43c829fda98409851f2ac097d62d
+      internalID: -1238576600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_left_edge
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f742f3fc3348b684d88ce712d5122281
+      internalID: -1793552076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_wall_left_edge_top
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbdc35d925fe7d4ea899fc91750ccc0
+      internalID: -929636753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top_left_wall
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779c92ee5a585314db53bf56ab97d1ea
+      internalID: -2088294443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top_right_wall
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22b1e38a358e4d4e85d033cfb8912aa
+      internalID: 292828602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -387,19 +597,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      front_wall_left_edge_base: -1238576600
       left_wall: 292321351
       crystal_ground: 1189217937
       wall_0: 1489936161
+      front_wall_right_edge_top: 979020516
+      front_wall_right_edge_base: -573323606
+      top_right_wall: 292828602
       front_wall: -1858231481
+      bottom_left_wall: -1481486418
+      top_left_wall: -2088294443
       bottom_wall: 1298369933
       player_0: 963578103
       front_wall_base: 333174851
       front_wall_top: -2440847
       container_open: -222203772
+      front_wall_left_edge: -1793552076
+      bottom_right_wall: -63261747
       container_closed: 1544105210
       enemy_0: 1514893664
+      front_wall_left_edge_top: -929636753
       hitbox_16x16: 607723218
       ground_0: 149776287
+      front_wall_right_edge: -638633143
       crystal: 86253360
       right_wall: 721090175
   spritePackingTag: 

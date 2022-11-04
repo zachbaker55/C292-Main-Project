@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityObject : Entity {
-    public override string entityType {get {return "EntityObject";}}
+    protected override string entityType {get {return "EntityObject";}}
 }

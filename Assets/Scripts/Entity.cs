@@ -3,19 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Entity : MonoBehaviour {
+    //Todo:
+    //Invincibility animation? 
+
     //Whether or not the entity can move
+
+    protected int level = 1;
     public int maxHealth = 1;
+    public int damage = 1;
 
     [HideInInspector] public bool canMove = true;
+    [HideInInspector] public bool isInvincible = false;
     
     protected int currentHealth;
-    public abstract string entityType { get; }
+    protected abstract string entityType { get; }
+    public string getEntityType() {
+        return entityType;
+    }
+    private float damageInvincibility = 0.1f;
+    private float invincibilityTimer = 0f;
 
     //Direction the entity is facing
     public Enums.Directions direction = Enums.Directions.down;
 
-    private void Awake() {
+    protected virtual void Awake() {
         currentHealth = maxHealth;
+    }
+
+    protected virtual void Update() { 
+        //Invincibility, later remove and use Hashsets to detect recent hits PER swing
+        if (isInvincible) {
+            if (invincibilityTimer <= 0) {
+                isInvincible = false;
+            } else {
+                invincibilityTimer -= Time.deltaTime;
+            }
+        }
+    }
+
+    protected virtual void FixedUpdate() {
+
+    }
+
+    public virtual void onHit(int damage) {
+        invincibilityTimer = damageInvincibility;
+        isInvincible = true;
+        takeDamage(damage);
     }
 
     public void takeDamage(int damage) {
@@ -24,4 +57,5 @@ public abstract class Entity : MonoBehaviour {
         if (currentHealth <= 0) Destroy(this.gameObject);
         Debug.Log("After: " + currentHealth);
     }
+
 }

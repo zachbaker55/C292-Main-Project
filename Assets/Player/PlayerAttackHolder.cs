@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerAttackHolder : MonoBehaviour {
     public Entity entity;
     public Attack attack;
-    float cooldownTime;
-    float activeTime;
+    private float cooldownTime;
+    private float activeTime;
 
     enum AttackState {
         ready,
