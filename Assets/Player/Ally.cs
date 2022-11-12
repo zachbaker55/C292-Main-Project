@@ -26,7 +26,9 @@ public class Ally : Entity {
 
 
 
-    private void OnDestroy() {
+    protected override void OnDestroy() {
+        base.OnDestroy();
         allyList.Remove(this);
     }
+
 }

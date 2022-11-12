@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttackHolder : MonoBehaviour {
+
     public Entity entity;
     public Attack attack;
     private float cooldownTime;
     private float activeTime;
+
+
 
     enum AttackState {
         ready,
@@ -16,10 +19,12 @@ public class PlayerAttackHolder : MonoBehaviour {
     AttackState state = AttackState.ready;
     public string button;
 
-    void Update() {
+
+    private void Update() {
         switch (state) {
             case AttackState.ready:
                 if (Input.GetButtonDown(button)){
+                    AudioManager.instance.PlaySound("Test");
                     entity.canMove = false;
                     attack.Activate(entity);
                     state = AttackState.active;

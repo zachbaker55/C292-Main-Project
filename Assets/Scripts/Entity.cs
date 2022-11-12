@@ -45,13 +45,17 @@ public abstract class Entity : MonoBehaviour {
 
     }
 
+    protected virtual void OnDestroy() {
+
+    }
+
     public virtual void onHit(int damage) {
         invincibilityTimer = damageInvincibility;
         isInvincible = true;
         takeDamage(damage);
     }
 
-    public void takeDamage(int damage) {
+    public virtual void takeDamage(int damage) {
         Debug.Log("Before: " + currentHealth);
         currentHealth -= damage;
         if (currentHealth <= 0) Destroy(this.gameObject);

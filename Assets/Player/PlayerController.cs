@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Ally {
 //animate with https://www.youtube.com/watch?v=whzomFgjT50
@@ -67,5 +68,10 @@ public class PlayerController : Ally {
         healthBar.setHealth(currentHealth);
     }
 
-    
+    public override void takeDamage(int damage) {
+        Debug.Log("Before: " + currentHealth);
+        currentHealth -= damage;
+        if (currentHealth <= 0) SceneManager.LoadScene(3);
+        Debug.Log("After: " + currentHealth);
+    }
 }

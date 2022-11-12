@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Enemy : Entity {
-    //Future specialized AI try this video
-    //https://www.youtube.com/watch?v=uOobLo2y3KI
+using UnityEngine.SceneManagement;
+public class Boss : Entity {
+    //Redo enemy structure at some later point... Its a mess
 
     protected override string entityType {get {return "Enemy";}}
-    public static List<Enemy> enemyList = new List<Enemy>();
+    public static List<Boss> bossList = new List<Boss>();
 
     public float walkSpeed;
 
@@ -30,7 +29,8 @@ public class Enemy : Entity {
 
 
     //Attacking
-    [SerializeField] private Attack attack;
+    [SerializeField] private Attack attack0;
+    [SerializeField] private Attack attack1;
     private float cooldownTime;
     private float activeTime;
     enum AttackState {
@@ -44,7 +44,7 @@ public class Enemy : Entity {
 
     protected override void Awake() {
         base.Awake();
-        enemyList.Add(this);
+        bossList.Add(this);
     }
 
     protected override void Update() {
@@ -56,7 +56,7 @@ public class Enemy : Entity {
                     activeTime -= Time.deltaTime;
                 } else {
                     state = AttackState.cooldown;
-                    cooldownTime = attack.cooldownTime;
+                    cooldownTime = attack0.cooldownTime;
                 }
             break;
             case AttackState.cooldown:
@@ -148,16 +148,30 @@ public class Enemy : Entity {
     private void AttemptAttack() {
         if (state == AttackState.ready){
             canMove = false;
-            attack.Activate(this);
-            state = AttackState.active;
-            activeTime = attack.activeTime;
+            int randAttack = Random.Range(0,4);
+            if (randAttack != 3) {
+                attack0.Activate(this);
+                state = AttackState.active;
+                activeTime = attack0.activeTime;
+            } else {
+                attack1.Activate(this);
+                state = AttackState.active;
+                activeTime = attack0.activeTime;
+            }
+
         }
     }
 
     protected override void OnDestroy() {
-        enemyList.Remove(this);
+        bossList.Remove(this);
         foreach (Ally player in Ally.GetAllyList()) {
             player.levelUp();
         }
+    }
+    public override void takeDamage(int damage) {
+        Debug.Log("Before: " + currentHealth);
+        currentHealth -= damage;
+        if (currentHealth <= 0) SceneManager.LoadScene(2);
+        Debug.Log("After: " + currentHealth);
     }
 }
