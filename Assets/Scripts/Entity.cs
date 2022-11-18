@@ -53,6 +53,7 @@ public abstract class Entity : MonoBehaviour {
         invincibilityTimer = damageInvincibility;
         isInvincible = true;
         takeDamage(damage);
+        AudioManager.instance.PlaySound("Hit");
     }
 
     public virtual void takeDamage(int damage) {

@@ -418,6 +418,36 @@ MonoBehaviour:
     volume: 0.453
     pitch: 1
     source: {fileID: 0}
+  - name: Swing
+    clip: {fileID: 8300000, guid: 1bb7d044ee3f34f4e8d13d3247363f93, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: CrystalBreak
+    clip: {fileID: 8300000, guid: cd99719296cb52e4fbbd356d2db31935, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 76a2104613096584c834dc9ff56c4e35, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 2ee0a9148868223479092b9e2e0c92e1, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 17fd8dc0f3f732b428706bc9c3f6597f, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: 8118f86fbd4bb094394df13a9bd2b3e0, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &420005593
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,11 +1155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8867630184976435562, guid: 15b73501aec64fd4090ef59431720114, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 8867630184976435562, guid: 15b73501aec64fd4090ef59431720114, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8867630184976435562, guid: 15b73501aec64fd4090ef59431720114, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19108,6 +19138,7 @@ GameObject:
   - component: {fileID: 1619111826}
   - component: {fileID: 1619111825}
   - component: {fileID: 1619111831}
+  - component: {fileID: 1619111832}
   m_Layer: 7
   m_Name: Player0
   m_TagString: Player
@@ -19201,7 +19232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619111820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: -10.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19220,13 +19251,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2827a444802f38d48a12e899811714a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 5
   damage: 1
   canMove: 1
   isInvincible: 0
   direction: 3
   walkSpeed: 6
   playerRB: {fileID: 1619111826}
+  animator: {fileID: 1619111832}
   healthBar: {fileID: 148756636}
   statDisplay: {fileID: 2019369330}
 --- !u!50 &1619111826
@@ -19265,6 +19297,26 @@ MonoBehaviour:
   entity: {fileID: 1619111825}
   attack: {fileID: 11400000, guid: 14c3082aea20b26428db6a8f84bc73a7, type: 2}
   button: Attack
+--- !u!95 &1619111832
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619111820}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: baa75858e967c8147a5b81c630432aa3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1726505253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5488334321152914841, guid: 12edbd03883d90d45b58d4faa40e1766, type: 3}

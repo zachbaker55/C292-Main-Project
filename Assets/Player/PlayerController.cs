@@ -9,13 +9,13 @@ public class PlayerController : Ally {
 
     //Components
     [SerializeField] private Rigidbody2D playerRB;
+    [SerializeField] private Animator animator;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private StatDisplay statDisplay;
 
     //Player
 
-    float inputX;
-    float inputY;
+    private Vector2 movement;
 
     protected override void Awake() {
         base.Awake();
@@ -27,8 +27,25 @@ public class PlayerController : Ally {
     protected override void Update() {
         base.Update();
         //Get movements
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        
+        //Direction
+        if (movement.x > 0 && movement.x >= movement.y) { //Right
+            direction = Enums.Directions.right;
+        } else if (movement.x < 0 && movement.x <= movement.y) { //Left
+            direction = Enums.Directions.left;
+        } else if (movement.y > 0 && movement.y >= movement.x) { // Up
+            direction = Enums.Directions.up;
+        } else if (movement.y < 0 && movement.y <= movement.x) { //Down
+            direction = Enums.Directions.down;
+        }
+        //Later connect animator float and direction enum?
+        if (movement.x != 0 || movement.y != 0) {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+        }
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     //Physics go in FixedUpdate()
@@ -36,18 +53,8 @@ public class PlayerController : Ally {
         base.FixedUpdate();
         if (canMove) {
             //Movement
-            if (inputX != 0 || inputY != 0) { 
-                playerRB.velocity = new Vector2(inputX, inputY).normalized * walkSpeed;
-                //Direction
-                if (inputX > 0 && inputX >= inputY) { //Right
-                    direction = Enums.Directions.right;
-                } else if (inputX < 0 && inputX <= inputY) { //Left
-                    direction = Enums.Directions.left;
-                } else if (inputY > 0 && inputY >= inputX) { // Up
-                    direction = Enums.Directions.up;
-                } else if (inputY < 0 && inputY <= inputX) { //Down
-                    direction = Enums.Directions.down;
-                }
+            if (movement.x != 0 || movement.y != 0) { 
+                playerRB.velocity = new Vector2(movement.x, movement.y).normalized * walkSpeed;
             } else {
                 playerRB.velocity = Vector2.zero;
             }

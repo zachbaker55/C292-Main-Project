@@ -16,6 +16,6 @@ MonoBehaviour:
   animationRight: {fileID: 0}
   animationDown: {fileID: 0}
   animationLeft: {fileID: 0}
-  name: 
-  cooldownTime: 0
-  activeTime: 0
+  name: Boss Attack 1
+  cooldownTime: 1
+  activeTime: 0.3

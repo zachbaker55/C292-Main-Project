@@ -24,7 +24,7 @@ public class PlayerAttackHolder : MonoBehaviour {
         switch (state) {
             case AttackState.ready:
                 if (Input.GetButtonDown(button)){
-                    AudioManager.instance.PlaySound("Test");
+                    AudioManager.instance.PlaySound("Swing");
                     entity.canMove = false;
                     attack.Activate(entity);
                     state = AttackState.active;

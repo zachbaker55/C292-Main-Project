@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8867630184976435564}
   - component: {fileID: 8867630184976435575}
   - component: {fileID: 6102934827093206316}
+  - component: {fileID: -3029483910492730085}
   m_Layer: 7
   m_Name: Boss0
   m_TagString: Enemy
@@ -157,5 +158,26 @@ MonoBehaviour:
   isInAlertRadius: 0
   isInAttackRadius: 0
   enemyRB: {fileID: 8867630184976435575}
+  animator: {fileID: -3029483910492730085}
   attack0: {fileID: 11400000, guid: cf3e26d00f86d1d4d8dcb603c63b5439, type: 2}
   attack1: {fileID: 11400000, guid: df3c72275353b084d8d6b786372b1a53, type: 2}
+--- !u!95 &-3029483910492730085
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867630184976435565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff0fa6bdd1c343441b48544c3bbec334, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

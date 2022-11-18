@@ -20,6 +20,7 @@ public class Enemy : Entity {
 
     private Transform target;
     [SerializeField] private Rigidbody2D enemyRB;
+    [SerializeField] private Animator animator;
 
 
     //probably redo this at some point
@@ -87,6 +88,8 @@ public class Enemy : Entity {
             isInAlertRadius = false;
             isInAttackRadius = false;
             }
+    
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
     protected override void FixedUpdate() {
         if(!isInAlertRadius) {
@@ -112,18 +115,26 @@ public class Enemy : Entity {
             if (ranDirection == 0) {
                 enemyRB.MovePosition((Vector2) transform.position + (new Vector2(0,1) * walkSpeed * Time.deltaTime));
                 direction = Enums.Directions.up;
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", 1);
             }
             if (ranDirection == 1) {
                 enemyRB.MovePosition((Vector2) transform.position + (new Vector2(0,-1) * walkSpeed * Time.deltaTime));
                 direction = Enums.Directions.down;
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", -1);
             }
             if (ranDirection == 2) {
                 enemyRB.MovePosition((Vector2) transform.position + (new Vector2(1,0) * walkSpeed * Time.deltaTime));
                 direction = Enums.Directions.right;
+                animator.SetFloat("Horizontal", 1);
+                animator.SetFloat("Vertical", 0);
             }
             if (ranDirection == 3) {
                 enemyRB.MovePosition((Vector2) transform.position + (new Vector2(-1,0) * walkSpeed * Time.deltaTime));
                 direction = Enums.Directions.left;
+                animator.SetFloat("Horizontal", -1);
+                animator.SetFloat("Vertical", 0);
             }
         }
     }
@@ -141,6 +152,10 @@ public class Enemy : Entity {
             direction = Enums.Directions.up;
         } else if (movement.y < 0 && movement.y <= movement.x) { //Down
             direction = Enums.Directions.down;
+        }
+        if (movement.x != 0 || movement.y != 0) {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
         }
     }
 

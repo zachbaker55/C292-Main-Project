@@ -957,6 +957,36 @@ MonoBehaviour:
     volume: 0.453
     pitch: 1
     source: {fileID: 0}
+  - name: Swing
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: CrystalBreak
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: d71824f0c8ddb6240b24dff71e326cbf, type: 3}
+    volume: 0.453
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1176176041
 Transform:
   m_ObjectHideFlags: 0
